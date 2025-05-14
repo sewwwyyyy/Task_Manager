@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Task Manager</h1>
+    </header>
+
+    <div class="top-bar">
+        <!-- Left: Form -->
+        <div class="task-form-section">
+            <section class="task-launcher">
+                <form id="task-form">
+                    <input type="text" id="task-title" placeholder="Task Title" required />
+                    <input type="text" id="task-desc" placeholder="Task Description" required />
+                    <button type="submit">Add Task</button>
+                </form>
+            </section>
+    
+            <!-- Task Table directly under form -->
+            <section class="task-table-section">
+                <div class="task-table-header">
+                    <span class="col-actions">ID</span>
+                    <span class="col-title">Title</span>
+                    <span class="col-desc">Description</span>
+                    <span class="col-status">Created At</span>
+                    <span class="col-created"> is_completed</span>
+                </div>
+                <div id="task-list" class="task-list">
+                    <!-- Tasks rendered here -->
+                </div>
+            </section>
+        </div>
+    
+        <!-- Right: Chart -->
+        <div class="task-chart-section">
+            <h2>Task Statistics</h2>
+            <canvas id="taskChart" width="300" height="300"></canvas>
+            <div id="taskCounts" class="task-counts"></div>
+        </div>
+    </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
